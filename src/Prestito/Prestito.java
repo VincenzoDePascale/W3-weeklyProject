@@ -30,7 +30,7 @@ public class Prestito implements Serializable{
 	private LocalDate dataprestito;
 	
 	@Column(nullable = false)
-	private LocalDate datarestituzioneprevista;
+	private LocalDate datarestituzioneprevista = dataprestito.plusDays(30);
 	
 	@Column
 	private LocalDate datarestituzioneeffettuata;
@@ -38,11 +38,11 @@ public class Prestito implements Serializable{
 	public Prestito() {}
 	
 	public Prestito(Utente utente, Pubblicazione pubblicazione, LocalDate dataprestito,
-			LocalDate datarestituzioneprevista, LocalDate datarestituzioneeffettuata) {
+			 LocalDate datarestituzioneeffettuata) {
 		this.utente = utente;
 		this.pubblicazione = pubblicazione;
 		this.dataprestito = dataprestito;
-		this.datarestituzioneprevista = datarestituzioneprevista;
+		this.datarestituzioneprevista = dataprestito.plusDays(30);
 		this.datarestituzioneeffettuata = datarestituzioneeffettuata;
 	}
 	

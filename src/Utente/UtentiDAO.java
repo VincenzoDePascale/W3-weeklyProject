@@ -46,20 +46,6 @@ public class UtentiDAO {
 		Query q = em.createNamedQuery("utenti.findAll");
 		return q.getResultList();
 	}
-	
-	public static void addToUtente(Utente e) {
-		em.getTransaction().begin();
-		em.persist(e);
-		em.getTransaction().commit();
-		System.out.println("utente creato!");
-	}
-	
-	public static void dellUtente(Utente u) {
-		em.getTransaction().begin();
-		em.remove(u);
-		em.getTransaction().commit();
-		System.out.println("utente eliminato!");
-	}
 
 	public static Utente searchById(Long id) {
 		em.getTransaction().begin();

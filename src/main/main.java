@@ -97,10 +97,23 @@ public class main {
 	}
 	
 	public static void dellElement(Object e) {
+		if (e != null) {
 		em.getTransaction().begin();
 		em.remove(e);
 		em.getTransaction().commit();
-		System.out.println("oggetto eliminato con successo!");
+
+		if(e instanceof Pubblicazione) {
+			System.out.println("pubblicazione eliminata con successo!");
+		} else if (e instanceof Utente){
+			System.out.println("rivista eliminato con successo!");
+		}else if (e instanceof Prestito){
+			System.out.println("utente emilinato con successo!");
+		}
+		
+		}else {
+			System.out.println("ERRORE: dati inseriti non validi!");
+		}
+		
 	}
 	
 }
