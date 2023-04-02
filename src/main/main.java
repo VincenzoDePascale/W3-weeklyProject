@@ -133,7 +133,7 @@ public class main {
             }
     }
 	
-	public static void searchPrestitiScaduti() {
+	/*public static void searchPrestitiScaduti() {
 		em.getTransaction().begin();
 		LocalDate now = LocalDate.now();
 		TypedQuery<Prestito> query = em.createQuery("SELECT p FROM Prestito p WHERE p.datarestituzioneeffettuata = null AND p.datarestituzioneprevista <=" + now, Prestito.class);
@@ -149,7 +149,7 @@ public class main {
 	        System.out.println("Nessuna pubblicazione trovata per l'anno " + now.toString());
 	    }
 		
-	}
+	}*/
 
 
 	
